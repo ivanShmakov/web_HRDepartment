@@ -1,4 +1,0 @@
-AddDefaultCharset cp1251
-<IfModule dir_module>
-    DirectoryIndex DocumentRoot\index.php
-</IfModule>
