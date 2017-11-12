@@ -17,7 +17,7 @@ $smarty->assign('title', 'HRDepartment');
 		$charset = 'cp1251';
 		$connector = new Connector($host, $db, $user, $pass, $charset);
 
-		$stmt = $connector->getPDO()->query('SELECT `id`, `FIO` FROM `workers` GROUP BY `id`');
+		$stmt = $connector->getPDO()->query('SELECT `id`, `FIO` FROM `workers`');
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		while($row = $stmt->fetch())
 		{
