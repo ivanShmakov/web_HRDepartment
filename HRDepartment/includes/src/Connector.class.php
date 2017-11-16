@@ -10,8 +10,11 @@
 				PDO::ATTR_EMULATE_PREPARES   => false,
 				PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES cp1251'
 			];
-			
-			$this->dbh = new PDO($dsn, $user, $password, $opt);
+			try{
+				$this->dbh = new PDO($dsn, $user, $password, $opt);
+			}catch (PDOException $e) {
+				die('Подключение не удалось: ' . $e->getMessage());
+			}
 		}
 		
 		public function getPDO(){

@@ -2,20 +2,19 @@
 <html>
 	<head>
 		<title>
-			{$title}
+			HRDepartment
 		</title>		
 	</head>
 	<body>
 		<table border=2>                                              
-		<th> id </th><th> ФИО </th>
+		<th> id </th><th> Имя </th><th> Отчество </th><th> Фамилия </th>
 		{$body}
 		</table> <br>
-		<form action = 'mytest_1.php' method = 'post'>                 
-			Введите id работника: <input type ='text' name = 'id owner'>                   
-			<input type='submit' value = 'OK' name = 'send'>         
+		<form action = "includes\src\actionShow.php" method = "post">                 
+			Введите id работника для получения подробной информации: <input type = "text" name = "id">
+			<input type = "submit" value = "OK" name = "send">
 		</form>
-		<a href = "http://mytest.ru/mytest_2.php"> Добавление работника </a><br><br>
-		<a href = "http://mytest.ru/mytest_6.php"> Изменение информации о работнике </a><br><br>
-		<a href = "http://mytest.ru/mytest_4.php""> Удаление работника </a><br><br>
+		<a href = "http://hrdepartment/"> Добавление работника </a><br><br>
+		<a href = "http://hrdepartment/"> Удаление работника </a><br><br>
 	</body>
 </html>

@@ -8,7 +8,6 @@ $smarty->compile_dir = 'C:/openserver/OpenServer/domains/HRDepartment/includes/s
 $smarty->config_dir = 'C:/openserver/OpenServer/domains/HRDepartment/includes/smarty/configs/';
 $smarty->cache_dir = 'C:/openserver/OpenServer/domains/HRDepartment/includes/smarty/cache/';
 
-$smarty->assign('title', 'HRDepartment');
 	try {	
 		$host = '127.0.0.1';
 		$db   = 'HRDepartmentDB';
@@ -17,16 +16,17 @@ $smarty->assign('title', 'HRDepartment');
 		$charset = 'cp1251';
 		$connector = new Connector($host, $db, $user, $pass, $charset);
 
-		$stmt = $connector->getPDO()->query('SELECT `id`, `FIO` FROM `workers`');
+		$stmt = $connector->getPDO()->query("SELECT `id`, `name`, `surname`, `patronymic` FROM `workers`");
 		$stmt->setFetchMode(PDO::FETCH_ASSOC);
 		while($row = $stmt->fetch())
 		{
-			$body = $body . "<tr><td>" . $row['id'] . "</td><td>" . $row['FIO'] . "</td></tr>";
+			$body = $body . "<tr><td>" . $row['id'] . "</td><td>" . $row['name'] . "</td><td>" . $row['patronymic'] . "</td><td>" .$row['surname']. "</td></tr>";
 		}
 		$smarty->assign('body', $body);
 		$smarty->display('index.tpl');
-	} catch (PDOException $e) {
-		die('Подключение не удалось: ' . $e->getMessage());
+	
+	} catch (Exception $e) {
+		die('Произошла ошибка' . $e->getMessage());
 	}
 	$dbh = null;
 ?>
