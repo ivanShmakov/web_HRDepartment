@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<title>
-			Show woker information
+			HRDepartment
 		</title>		
 	</head>
-	<body>    
+	<body>
 	<center>
-		{$body}
-		<a href = '/'>Назад</a> 
+		<br><br><h1>УСПЕХ!</h1>
+		<a href = '/'>На главную</a> 
 	</center>
 	</body>
 </html>

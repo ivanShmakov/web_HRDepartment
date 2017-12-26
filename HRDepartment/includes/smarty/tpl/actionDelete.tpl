@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<title>
-			Show woker information
+			Delete worker
 		</title>		
 	</head>
-	<body>    
+	<body>               
 	<center>
 		{$body}
-		<a href = '/'>Назад</a> 
+		<br><a href = '/'>Oкей</a> 
 	</center>
 	</body>
 </html>
